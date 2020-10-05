@@ -1,0 +1,22 @@
+# DOMÁCÍ ÚKOL 1 - TRNG
+
+## Zadání
+
+Zjistěte, jak kvalitní je náhodný generátor, který vygeneroval dodanou posloupnost; klasifikujte pro každou pozici ve slově zvlášť, tj. nejprve vyhodnoťte kvalitu 0. bitu každého slova (LSB), pak 1. bitu atd. Použijte sadu testů STS od NIST, případně jinou vhodnou metodu testování (a zdůvodněte výběr metody). Výsledkem bude popis postupu (rozsah cca 1 strana) a výsledky.
+
+## Výsledky - popis postupu
+
+Zpráva s popisem postupu a výsledky se nachází v souboru ZpravaTRNG.pdf
+
+## Ostatní přiložené soubory
+
+složka Komprese - Program pro RLE kompresi vstupních souborů, který posloužil pro analýzu vstupních posloupností jednotlivých pozic bitů
+
+složka Results - Podrobné výsledky získané sadou testů STS od NIST
+
+bitsReport - Výstup programu pomocného programu Komprese
+
+PopisTestu.pdf - příloha se stručným popisem všech 15 testů včetně zvolených parametrů pro testování
+
+runAllTest.sh - skript, který byl použit pro usnadnění testování
+

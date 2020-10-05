@@ -10,7 +10,7 @@ Zpráva s popisem postupu a výsledky se nachází v souboru ZpravaTRNG.pdf
 
 ## Ostatní přiložené soubory
 
-složka Komprese - Program pro RLE kompresi vstupních souborů, který posloužil pro analýzu vstupních posloupností jednotlivých pozic bitů
+složka Komprese - Program pro RLE kompresi vstupních souborů, který posloužil pro analýzu vstupních posloupností jednotlivých pozic bitů, dále můžeme ve složce najít soubory f0 až f15
 
 složka Results - Podrobné výsledky získané sadou testů STS od NIST
 

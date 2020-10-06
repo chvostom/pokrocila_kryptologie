@@ -1,0 +1,14 @@
+# AKTIVITA ZE CVIČENÍ - PRNG
+
+## Zadání
+
+Máme sekvenci čísel produkovaných lineárním kongruenčním generátorem a neznáme modulo. Sekvence je {3981407602, 3722707486, 2838881506, 1824420908, 84969041, 3531119163, 2057414955, 3530783127, 1810314921, 3112160326}. Určete následující prvek sekvence.
+
+## Výsledky
+
+Výsledné řešení se nachází v souboru PRNGhomework.nb
+
+## Ostatní přiložené soubory
+
+PRNGhomework.pdf - stejný soubor jako PRNGhomework.nb akorát uložený jako pdf
+

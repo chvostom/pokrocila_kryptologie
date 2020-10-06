@@ -4,3 +4,5 @@
 
 složka TRNG - vypracování domácího úkolu na téma TRNG
 
+složka PRNG - vypracování úkolu zadaného jako práce na 1./2. cvičení na téma PRNG
+

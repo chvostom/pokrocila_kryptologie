@@ -1,0 +1,288 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9636,        278]
+NotebookOptionsPosition[      7958,        237]
+NotebookOutlinePosition[      8292,        252]
+CellTagsIndexPosition[      8249,        249]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+M\[AAcute]me sekvenci \[CHacek]\[IAcute]sel produkovan\[YAcute]ch line\
+\[AAcute]rn\[IAcute]m kongruen\[CHacek]n\[IAcute]m gener\[AAcute]torem, av\
+\[SHacek]ak nezn\[AAcute]me modulo:\
+\>", "Section",
+ CellChangeTimes->{{3.810970338832014*^9, 3.810970372584247*^9}, 
+   3.810970683318349*^9},ExpressionUUID->"b3af9ab8-6b0d-4331-98c4-\
+b92c969f3cf7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sequence", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{
+   "3981407602", ",", "3722707486", ",", "2838881506", ",", "1824420908", ",",
+     "84969041", ",", "3531119163", ",", "2057414955", ",", "3530783127", ",",
+     "1810314921", ",", "3112160326"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.8109703968610907`*^9, 3.810970455195517*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"b675ac33-bdb2-4663-8d96-b8235af2b463"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "3981407602", ",", "3722707486", ",", "2838881506", ",", "1824420908", ",", 
+   "84969041", ",", "3531119163", ",", "2057414955", ",", "3530783127", ",", 
+   "1810314921", ",", "3112160326"}], "}"}]], "Output",
+ CellChangeTimes->{3.8109704570915613`*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"0ffacd7d-950a-4042-bb54-2f693b2f1b49"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Na z\[AAcute]klad\[EHacek] anal\[YAcute]zy George Marsaglii sestav\[IAcute]me \
+matice a pot\[EAcute] spo\[CHacek]teme GCD v\[SHacek]ech determinant\[URing] \
+v\[SHacek]ech matic, \[CHacek]\[IAcute]m\[ZHacek] z\[IAcute]sk\[AAcute]me \
+modulo:\
+\>", "Section",
+ CellChangeTimes->{{3.810970552066063*^9, 3.810970572242648*^9}, {
+  3.810970602592176*^9, 
+  3.810970676868132*^9}},ExpressionUUID->"f98cc7d2-597a-44b5-9a6c-\
+925c8a8b3303"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"getmat", "[", 
+    RowBox[{"x_", ",", "i_Integer"}], "]"}], ":=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"x", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", " ", 
+       RowBox[{"x", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", "+", "1"}], "]"}], "]"}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"x", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", "+", "1"}], "]"}], "]"}], ",", " ", 
+       RowBox[{"x", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", "+", "2"}], "]"}], "]"}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"x", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", "+", "2"}], "]"}], "]"}], ",", " ", 
+       RowBox[{"x", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", "+", "3"}], "]"}], "]"}], ",", "1"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"listOfDeterminants", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Det", "[", 
+      RowBox[{"getmat", "[", 
+       RowBox[{"sequence", ",", "1"}], "]"}], "]"}], ",", 
+     RowBox[{"Det", "[", 
+      RowBox[{"getmat", "[", 
+       RowBox[{"sequence", ",", "2"}], "]"}], "]"}], ",", 
+     RowBox[{"Det", "[", 
+      RowBox[{"getmat", "[", 
+       RowBox[{"sequence", ",", "3"}], "]"}], "]"}], ",", 
+     RowBox[{"Det", "[", 
+      RowBox[{"getmat", "[", 
+       RowBox[{"sequence", ",", "4"}], "]"}], "]"}], ",", " ", 
+     RowBox[{"Det", "[", 
+      RowBox[{"getmat", "[", 
+       RowBox[{"sequence", ",", "5"}], "]"}], "]"}], ",", " ", 
+     RowBox[{"Det", "[", 
+      RowBox[{"getmat", "[", 
+       RowBox[{"sequence", ",", "6"}], "]"}], "]"}], ",", " ", 
+     RowBox[{"Det", "[", 
+      RowBox[{"getmat", "[", 
+       RowBox[{"sequence", ",", "7"}], "]"}], "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"modulo", " ", "=", " ", 
+  RowBox[{"(", 
+   RowBox[{"GCD", "@@", "listOfDeterminants"}], ")"}]}]}], "Input",
+ CellChangeTimes->{{3.810970709174637*^9, 3.810970742446151*^9}, {
+  3.810970793622273*^9, 3.810970870268819*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"cdcfc3cd-e87e-4bf9-9f08-b4971c002b7a"],
+
+Cell[BoxData["4294967291"], "Output",
+ CellChangeTimes->{3.8109708403581467`*^9, 3.810970874617878*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"caba53cc-b798-4d40-bab8-40750304f32d"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Pomoc\[IAcute] \[RHacek]e\[SHacek]en\[IAcute] soustavy line\[AAcute]rn\
+\[IAcute]ch kongruentn\[IAcute]ch rovnic zjist\[IAcute]me parametry a, b pro \
+LCG: \
+\>", "Section",
+ CellChangeTimes->{{3.8109709345748367`*^9, 
+  3.810971009650776*^9}},ExpressionUUID->"86001551-7261-4990-9a00-\
+103cb7889e92"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"equations", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"sequence", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], " ", "\[Equal]", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"sequence", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "*", "aa"}], "+", "bb"}]}], ",", " ", 
+     RowBox[{
+      RowBox[{"sequence", "[", 
+       RowBox[{"[", "3", "]"}], "]"}], " ", "\[Equal]", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"sequence", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "*", "aa"}], "+", "bb"}]}]}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"solution", " ", "=", " ", 
+   RowBox[{"Solve", "[", 
+    RowBox[{"equations", ",", " ", 
+     RowBox[{"Modulus", " ", "\[Rule]", " ", "modulo"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"a", " ", "=", " ", 
+  RowBox[{"aa", "/.", 
+   RowBox[{"solution", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"b", " ", "=", " ", 
+  RowBox[{"bb", "/.", 
+   RowBox[{"solution", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.810971192427897*^9, 3.810971238546924*^9}, {
+  3.810971368989629*^9, 3.810971512442325*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"f193e7b5-9ba2-41c2-b4f0-83bc098e255a"],
+
+Cell[BoxData["3373259426"], "Output",
+ CellChangeTimes->{3.810971515774609*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"432b9632-dea0-45ec-a6c9-6761c008cb71"],
+
+Cell[BoxData["12345"], "Output",
+ CellChangeTimes->{3.8109715157845917`*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"fb0b44e8-0392-45e1-b0bc-ec3846b6a8c3"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+M\[AAcute]me v\[SHacek]echny pot\[RHacek]ebn\[EAcute] parametry pro vygenerov\
+\[AAcute]n\[IAcute] dal\[SHacek]\[IAcute]ho \[CHacek]lenu posloupnosti:\
+\>", "Section",
+ CellChangeTimes->{{3.810971541588622*^9, 
+  3.8109715672280807`*^9}},ExpressionUUID->"05255fea-f323-4dd7-a5c6-\
+f286e6a01cd2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"lcg", "[", 
+    RowBox[{"x_", ",", "a_", ",", "b_", ",", "m_"}], "]"}], ":=", 
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", " ", "*", " ", "a"}], " ", "+", " ", "b"}], ",", " ", 
+     "m"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"lcg", "[", 
+  RowBox[{
+   RowBox[{"sequence", "[", 
+    RowBox[{"[", "10", "]"}], "]"}], ",", "a", ",", "b", ",", "modulo"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.8109716484816837`*^9, 3.810971678278481*^9}, {
+  3.810971725359252*^9, 3.810971725973394*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"44b0347a-1b71-44cd-b7bf-2079ce4a8f6a"],
+
+Cell[BoxData["4251006475"], "Output",
+ CellChangeTimes->{3.810971729497415*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"3b54a4dd-b585-4368-b1ea-ae483de9bee4"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1920, 998},
+WindowMargins->{{0, Automatic}, {25, Automatic}},
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 359, 7, 68, "Section",ExpressionUUID->"b3af9ab8-6b0d-4331-98c4-b92c969f3cf7"],
+Cell[CellGroupData[{
+Cell[964, 33, 441, 8, 31, "Input",ExpressionUUID->"b675ac33-bdb2-4663-8d96-b8235af2b463"],
+Cell[1408, 43, 374, 7, 35, "Output",ExpressionUUID->"0ffacd7d-950a-4042-bb54-2f693b2f1b49"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1831, 56, 444, 9, 68, "Section",ExpressionUUID->"f98cc7d2-597a-44b5-9a6c-925c8a8b3303"],
+Cell[CellGroupData[{
+Cell[2300, 69, 2203, 62, 78, "Input",ExpressionUUID->"cdcfc3cd-e87e-4bf9-9f08-b4971c002b7a"],
+Cell[4506, 133, 181, 2, 35, "Output",ExpressionUUID->"caba53cc-b798-4d40-bab8-40750304f32d"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4736, 141, 311, 7, 68, "Section",ExpressionUUID->"86001551-7261-4990-9a00-103cb7889e92"],
+Cell[CellGroupData[{
+Cell[5072, 152, 1343, 36, 124, "Input",ExpressionUUID->"f193e7b5-9ba2-41c2-b4f0-83bc098e255a"],
+Cell[6418, 190, 158, 2, 35, "Output",ExpressionUUID->"432b9632-dea0-45ec-a6c9-6761c008cb71"],
+Cell[6579, 194, 155, 2, 35, "Output",ExpressionUUID->"fb0b44e8-0392-45e1-b0bc-ec3846b6a8c3"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6783, 202, 305, 6, 68, "Section",ExpressionUUID->"05255fea-f323-4dd7-a5c6-f286e6a01cd2"],
+Cell[CellGroupData[{
+Cell[7113, 212, 656, 17, 55, "Input",ExpressionUUID->"44b0347a-1b71-44cd-b7bf-2079ce4a8f6a"],
+Cell[7772, 231, 158, 2, 35, "Output",ExpressionUUID->"3b54a4dd-b585-4368-b1ea-ae483de9bee4"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

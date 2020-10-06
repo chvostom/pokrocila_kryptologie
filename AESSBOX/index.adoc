@@ -1,0 +1,14 @@
+# AKTIVITA ZE CVIČENÍ - AES BOX
+
+## Zadání
+
+Zobrazte SBox tabulku + přepište afinní transformaci tak, aby neobsahovala reverzace
+
+## Výsledky
+
+Výsledné řešení se nachází v souboru AESSBoxHomework.nb
+
+## Ostatní přiložené soubory
+
+AESSBoxHomework.pdf - stejný soubor jako AESSBoxHomework.nb akorát uložený jako pdf
+

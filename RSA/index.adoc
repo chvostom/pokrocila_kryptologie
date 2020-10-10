@@ -1,0 +1,16 @@
+# AKTIVITA ZE CVIČENÍ - RSA
+
+## Zadání
+
+Kryptografický modul šifruje symetrické klíče o délce 128 bitů pomocí schématu RSAES-PKCS1-v1_5 (viz PKCS#1). Vlivem chyby došlo k zašifrování jednoho a téhož (vč. doplňku) 128b klíče dvakrát po sobě pro stejnou hodnotu modulu N a dva různé veřejné exponenty e1 a e2. Tím vznikly dva šifrové texty c1 a c2. Najděte hodnotu přenášeného symetrického klíče, máte-li zadáno N, e1, e2, c1, c2.
+
+## Výsledky
+
+Výsledné řešení se nachází v souboru RSAhomework.nb
+
+## Ostatní přiložené soubory
+
+RSAhomework.pdf - stejný soubor jako RSAhomework.nb akorát uložený jako pdf
+
+PKCS1.pdf - Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography, Specifications Version 2.1
+

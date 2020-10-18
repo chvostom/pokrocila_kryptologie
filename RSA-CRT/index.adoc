@@ -1,0 +1,16 @@
+# DOMÁCÍ ÚKOL 1 - Chybový útok na RSA-CRT
+
+## Zadání
+
+Při podpisu neznámé zprávy s využitím schématu RSASSA-PKCS1-v1_5 (viz PKCS#1) došlo k chybě při výpočtu podepisovací transformace RSASP1 (viz PKCS#1). K výpočtu byla použita Čínská věta o zbytku, chyba zasáhla právě jen parciální hodnotu podpisu modulo p, tj. hodnotu označovanou dle popisu v PKCS#1 jako s_1. Signatář později zjistil, že vypočtený podpis je neplatný, a nechal tutéž zprávu podepsat znovu. Nyní už vše proběhlo bez chyb. Nalezněte soukromý klíč signatáře, máte-li dán veřejný modul n, veřejný exponent e, hodnotu chybného podpisu f a hodnotu správného podpisu s.
+
+## Výsledky
+
+Výsledné řešení se nachází v souboru RSA-CRThomework.nb
+
+## Ostatní přiložené soubory
+
+RSA-CRThomework.pdf - stejný soubor jako RSA-CRThomework.nb akorát uložený jako pdf
+
+PKCS1doc.pdf - Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography, Specifications Version 2.1
+

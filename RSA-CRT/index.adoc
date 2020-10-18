@@ -1,4 +1,4 @@
-# DOMÁCÍ ÚKOL 1 - Chybový útok na RSA-CRT
+# DOMÁCÍ ÚKOL 2 - Chybový útok na RSA-CRT
 
 ## Zadání
 

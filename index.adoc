@@ -12,3 +12,5 @@ složka RSA - vypracování úkolu zadaného jako práce na 3. cvičení na tém
 
 složka RSA-CRT - vypracování domácího úkolu na téma Chybový útok na RSA-CRT
 
+složka Aproximace - domácí příprava na 6. cvičení
+

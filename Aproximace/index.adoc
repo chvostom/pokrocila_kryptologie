@@ -1,0 +1,22 @@
+# AKTIVITA ZE CVIČENÍ - APROXIMACE
+
+## Zadání
+
+Sestavte vlastní lineární aproximaci SPN šifry a připravte všechny potřebné informace, abyste mohli provést útok.
+
+Lineární aproximaci sestavenou na 5. cvičení využijte k útoku na testovací implementaci SPN šifry. 
+
+## Výsledky
+
+Výsledek (výstupy z příkazové řádky) lze najít v souboru CMDoutput.png.
+
+## Ostatní přiložené soubory a složky
+
+kody/ - Kódy použité k útoku na testovací implementaci SPN šifry.
+
+AproximaceObrazek.png - Obrázek použité aproximace.
+
+AproximaceVypocet.pdf - Výpočet použité aproximace.
+
+ldc_tutorial.pdf - A Tutorial on Linear and Differential Cryptanalysis
+

@@ -1,0 +1,24 @@
+# AKTIVITA ZE CVIČENÍ - APROXIMACE
+
+## Zadání
+
+Sestavte vlastní lineární aproximaci SPN šifry a připravte všechny potřebné informace, abyste mohli provést útok.
+
+Lineární aproximaci sestavenou na 5. cvičení využijte k útoku na testovací implementaci SPN šifry. 
+
+## Postup a výsledky (Zpráva)
+
+Nejprve byla navrhnuta aproximace ( obrázek v souboru AproximaceObrazek.png a výpočet v souboru AproximaceVypocet.pdf). Následně byl spočítán bias, který vyšel -1/64, což je nepatrně horší výsledek než v případě ukázkové aproximace ze cvičení. Podle vzorců v dokumentaci ldc_tutorial.pdf bylo vypočítáno, že je potřeba alespoň 4096 plaintextů (1/(1/64)^2). Následně byl proveden útok pomocí zdrojových kódů ze cvičení. Upravené zdrojové kódy pro vypočítanou aproximaci jsou ve složce kody/.  Následně byl použit testovací klíč 0x3b6c a bylo vygenerováno postupně 10000, 20000, 50000 a 100000 plaintextů. Všechny výstupy byly velmi podobné, největší rozdíly byly pouze v uvedených biasech. Pro všechny počty plaintextů byl na prvním místě zobrazen klíč 0x3060, který odpovídá našemu klíči (podklíč zasažených SBOXů). Zároveň však byly vždy určeny další tři klíče se stejným biasem, tedy výsledek není zcela jasný, což je pravděpodobně způsobeno volbou aproximace. Ukázku výsledku (výstupy z příkazové řádky pro nejvyšší zvolený počet plaintextů ) lze najít v souboru CMDoutput.png. 
+
+## Přiložené soubory a složky
+
+CMDoutput.png - výstup z příkazové řádky
+
+kody/ - kódy použité k útoku na testovací implementaci SPN šifry
+
+AproximaceObrazek.png - obrázek použité aproximace
+
+AproximaceVypocet.pdf - výpočet použité aproximace
+
+ldc_tutorial.pdf - A Tutorial on Linear and Differential Cryptanalysis
+

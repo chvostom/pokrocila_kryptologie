@@ -12,5 +12,7 @@ složka RSA - vypracování úkolu zadaného jako práce na 3. cvičení na tém
 
 složka RSA-CRT - vypracování domácího úkolu na téma Chybový útok na RSA-CRT
 
-složka LinearniKryptoanalyza - domácí příprava na 6. a 7. cvičení
+složka LinearniKryptoanalyza - vypracování úkolu zadaného na 6. a 7. cvičení
+
+složka DiferencialniKryptoanalyza - vypracování úkolu zadaného na 7. cvičení
 

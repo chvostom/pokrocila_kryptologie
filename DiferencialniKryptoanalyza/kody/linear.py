@@ -12,6 +12,17 @@ def extract_key_bytes(key_mask):
             res.append(byte*4)
     return res
 
+def generate_keys(k_bytes):
+    n = len(k_bytes)
+    res = []
+    for i in range(16**n):
+        bins = [0xF & i, (0xF0 & i) >> 4, (0xF00 & i) >> 8, (0xF000 & i) >> 12]
+        acc = 0
+        for j,b in enumerate(k_bytes):
+            acc |= bins[j] << b
+        res.append(acc)
+    return res
+
 def hamming_weight(bits):
 #Brian Kernighan's algorithm
     count = 0
@@ -24,10 +35,14 @@ def reverse_last_round(block, key):
     return substitution_dec(block ^ key)
 
 def linear_cryptoanalysis(pt_file, ct_file, pmask, umask, key_mask, bias):
-    key_byte1, key_byte2 = extract_key_bytes(key_mask)
+    key_bytes = extract_key_bytes(key_mask)
+    if not key_bytes:
+        raise ValueError("At least one bit has to be set in key_mask.")
+    key_bytes_len = len(key_bytes)
+    possible_keys = generate_keys(key_bytes)
 
     hit_table = [0] * (2**(16))
-    max_hit_table = [{'key':0,'bias': 0,'Q':1} for i in range(0,20)] #key, bias, Q
+    max_hit_table = [{'key':0,'bias': 0,'Q':1} for i in range(20)] #key, bias, Q
 
     count = 0
     with open(pt_file, 'r') as fid_pt, open(ct_file, 'r') as fid_ct:
@@ -38,18 +53,14 @@ def linear_cryptoanalysis(pt_file, ct_file, pmask, umask, key_mask, bias):
             ot_masked = ot_block & pmask
             ot_hamming = hamming_weight(ot_masked)
 
-            for k in range(0,16):
-                for i in range(0,16):
-                    key = (k << key_byte2) | (i << key_byte1)
-                    U = reverse_last_round(ct_block,key) & umask
-                    Uxor = ot_hamming + hamming_weight(U)
-                    if (Uxor % 2) == 0:
-                        hit_table[key]+=1
+            for key in possible_keys:
+                U = reverse_last_round(ct_block,key) & umask
+                Uxor = ot_hamming + hamming_weight(U)
+                if (Uxor % 2) == 0:
+                    hit_table[key]+=1
             count+=1
 
-        for k in range(0,16):
-            for i in range(0,16):
-                key = (k << key_byte2) | (i << key_byte1)
+        for key in possible_keys:
                 hit_table[key] = abs((hit_table[key] - (count/2))/count)
                 Q = abs(bias - hit_table[key])
                 #save the maximum
@@ -67,18 +78,16 @@ def main():
     args = vars(parser.parse_args())
 
     # %%%%%% DEFAULT ARGS %%%%%% #
-    P_mask = 0b0100000000000100 #Plaintext bitmask
-    U_mask = 0b1000000010000000 #U mask
-    key_mask = 0b1010 #Sbox mask - !!!max 2 ones!!!
-    bias = 1/64
+    P_mask =  0b101100000000 #Plaintext bitmask
+    U_mask = 0b010100000101 #U mask
+    key_mask = 0b0101 #Sbox mask
+    bias = 1/32
 
-    print(f"Predicted bias: {bias:.4f}")
-    
     max_hits = linear_cryptoanalysis(args['plaintext'], args['ciphertext'], P_mask, U_mask, key_mask, bias)
 
     print("Top 20 biases:")
     for res in max_hits:
-        print(f"Key: 0x{res['key']:04X}, bias: {res['bias']:.4f}")
+        print(f"Key: 0x{res['key']:04X}, bias: {res['bias']:.4f}, Q: {res['Q']:.4f}")
 
 if __name__ == "__main__":
     main()

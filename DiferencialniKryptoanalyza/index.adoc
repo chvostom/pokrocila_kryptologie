@@ -1,8 +1,8 @@
-# AKTIVITA ZE CVIČENÍ - Lineární kryptoanalýza
+# AKTIVITA ZE CVIČENÍ - Diferenciální kryptoanalýza
 
 ## Zadání
 
-Sestavte vlastní lineární aproximaci SPN šifry a připravte všechny potřebné informace, abyste mohli provést útok. 
+Sestavte vlastní diferenciální aproximaci SPN šifry a připravte všechny potřebné informace, abyste mohli provést útok. 
 
 Dále sestavenou aproximaci využijte k útoku na testovací implementaci SPN šifry. 
 
@@ -14,7 +14,7 @@ Postup a výsledky jsou popsány v souboru Zprava.pdf.
 
 kody/ - kódy použité k útoku na testovací implementaci SPN šifry
 
-kody/runLinearCode.sh - skript, který spustí výpočet pro daný počet plaintextů a daný klíč 
+kody/runDifferentialCode.sh - skript, který spustí výpočet pro daný počet plaintextů a daný klíč 
 
 kody/runProcess.sh - skript, který spustí celý testovací proces
 
@@ -25,4 +25,3 @@ CMDOutputs.png - výstupy z příkazové řádky
 ldc_tutorial.pdf - A Tutorial on Linear and Differential Cryptanalysis
 
 Zprava.pdf - popis postupu a výsledky
-

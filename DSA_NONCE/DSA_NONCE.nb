@@ -1,0 +1,306 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10928,        298]
+NotebookOptionsPosition[      8868,        253]
+NotebookOutlinePosition[      9202,        268]
+CellTagsIndexPosition[      9159,        265]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["DSA - dvoj\[IAcute] pou\[ZHacek]it\[IAcute] NONCE", "Title",
+ CellChangeTimes->{{3.8156650061420794`*^9, 
+  3.815665053391302*^9}},ExpressionUUID->"edb0c8bb-d8ce-4fdb-a4f4-\
+b4b763936641"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Kryptografick\[YAcute] modul prov\[AAcute]d\[EHacek]j\[IAcute]c\[IAcute] v\
+\[YAcute]po\[CHacek]et podpis\[URing] algoritmem DSA byl napaden \
+\[SHacek]kodliv\[YAcute]m programem. Ten zp\[URing]sobil, \[ZHacek]e byly \
+vygenerov\[AAcute]ny dva podpisy dvou r\[URing]zn\[YAcute]ch zpr\[AAcute]v za \
+pou\[ZHacek]it\[IAcute] stejn\[EAcute] hodnoty NONCE k. Vypo\[CHacek]t\
+\[EHacek]te hodnotu soukrom\[EAcute]ho kl\[IAcute]\[CHacek]e, m\[AAcute]te-li \
+d\[AAcute]ny ve\[RHacek]ejn\[EAcute] parametry (p, q, g), ve\[RHacek]ejn\
+\[YAcute] kl\[IAcute]\[CHacek] y, zpr\[AAcute]vy m_1, m_2 a podpisy (r_1, \
+s_1) a (r_2, s_2):\
+\>", "Section",
+ CellChangeTimes->{
+  3.8156650662882633`*^9, {3.815665103616433*^9, 
+   3.815665109904118*^9}},ExpressionUUID->"bc118fe9-93c8-4e6a-a0cc-\
+74dd32eab230"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "p", "=", 
+    "1308586548697916298211648274057044868084843254006950171764360891713639531\
+748031693417835553732150756141144659919008551532614921526336624387731883762629\
+792821017533944549779935798168543838309005283512060893432651023383739008698108\
+845323421863757325374481463351826168009454195460098924436562489942890787029324\
+01"}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"q", "=", "1145453138964420393547388172384121951637470359533"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "g", "=", 
+   "45104757599271935262448506616386012014661951364038483184033590598998678683\
+181472759343797248953221172412232187980691297659491950373422141403930338141698\
+231706841971665582670350829595685041641877692018530060168714567166318314967419\
+71210395589377317000612633487892357425274282531110618387991431638379437562001"\
+}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"m1", "=", "\"\<IOU $1000\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m2", "=", "\"\<Merry Christmas\>\""}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"r", "=", 
+   RowBox[{"r1", "=", 
+    RowBox[{
+    "r2", "=", "916128381002192237330415624031916695461722389304"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s1", "=", "1016140177410528212949844490506968808343879600370"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s2", "=", "767135282992918681484216676594223285185365265436"}], 
+  ";"}]}], "Input",
+ CellLabel->"In[67]:=",ExpressionUUID->"488962df-f371-49d8-abb9-2e2481a0ea0b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Nejprve je pot\[RHacek]eba zahashovat ob\[EHacek] zpr\[AAcute]vy. Pro tuto \
+\[UAcute]lohu byla zvolena hashovac\[IAcute] funkce SHA-1, nicm\[EAcute]n\
+\[EHacek] je mo\[ZHacek]n\[EAcute] pou\[ZHacek]\[IAcute]t libovolnou hashovac\
+\[IAcute] funkci:\
+\>", "Section",
+ CellChangeTimes->{{3.8156654010772867`*^9, 3.8156655163070927`*^9}, {
+  3.815668848028405*^9, 
+  3.815668848514707*^9}},ExpressionUUID->"ee77044a-4560-40e8-b13a-\
+05752a545295"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"hm1", "=", 
+  RowBox[{"Hash", "[", 
+   RowBox[{"m1", ",", "\"\<SHA\>\""}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"hm2", "=", 
+  RowBox[{"Hash", "[", 
+   RowBox[{"m2", ",", "\"\<SHA\>\""}], "]"}]}]}], "Input",
+ CellLabel->"In[75]:=",ExpressionUUID->"5c44a5fd-52f6-444b-bffd-c7b784b5223b"],
+
+Cell[BoxData["1121674975390587548442137500973361632322358316031"], "Output",
+ CellChangeTimes->{3.815665619869781*^9},
+ CellLabel->"Out[75]=",ExpressionUUID->"412280bb-c0f6-4b26-a844-d7b4190b1fca"],
+
+Cell[BoxData["1346228819325514031437030502708334465394093600592"], "Output",
+ CellChangeTimes->{3.815665619871398*^9},
+ CellLabel->"Out[76]=",ExpressionUUID->"2cc670c5-e77e-4da8-b466-d9b69587b930"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+V\[IAcute]me, \[ZHacek]e pro podepisov\[AAcute]n\[IAcute] plat\[IAcute] ( s1 \
+= k^-1 * ( hm1 + x * r ) ) a analogicky ( s2 = k^-1 * ( hm2 + x * r ) ). \
+Funkce Solve najde snadno \[RHacek]e\[SHacek]en\[IAcute]:\
+\>", "Section",
+ CellChangeTimes->{{3.8156680860872917`*^9, 
+  3.815668209872302*^9}},ExpressionUUID->"46f68c2d-662d-4b4b-9614-\
+aa631fb3d110"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"solution", "=", 
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"s1", "\[Equal]", 
+       RowBox[{
+        RowBox[{"kk", "^", 
+         RowBox[{"-", "1"}]}], "*", 
+        RowBox[{"(", 
+         RowBox[{"hm1", "+", 
+          RowBox[{"xx", "*", "r"}]}], ")"}]}]}], ",", 
+      RowBox[{"s2", "\[Equal]", 
+       RowBox[{
+        RowBox[{"kk", "^", 
+         RowBox[{"-", "1"}]}], "*", 
+        RowBox[{"(", 
+         RowBox[{"hm2", "+", 
+          RowBox[{"xx", "*", "r"}]}], ")"}]}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"kk", ",", "xx"}], "}"}], ",", 
+    RowBox[{"Modulus", "\[Rule]", "q"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"solveK", "=", 
+   RowBox[{"kk", "/.", 
+    RowBox[{"solution", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"solveX", "=", 
+   RowBox[{"xx", "/.", 
+    RowBox[{"solution", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8156682375918293`*^9, 3.815668243438818*^9}},
+ CellLabel->"In[77]:=",ExpressionUUID->"9b6543aa-d756-43ca-9074-be2c10b20dfd"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+    "kk", "\[Rule]", "290906610810690179972018179239952193088672167188"}], 
+    ",", 
+    RowBox[{
+    "xx", "\[Rule]", "555336883567305608284725219102191211489862726405"}]}], 
+   "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.815668247855331*^9},
+ CellLabel->"Out[77]=",ExpressionUUID->"e15a64e8-e3cc-4071-bf8d-28397885b8d1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Pokud bychom v\[SHacek]ak necht\[EHacek]li pou\[ZHacek]\[IAcute]t funkci \
+Solve, m\[URing]\[ZHacek]eme si ze soustavy rovnic v \
+p\[RHacek]edchoz\[IAcute]m bod\[EHacek] odvodit ( k = ( ( hm1 - hm2 ) / ( s1 \
+- s2 ) ) mod q  ) a tak\[EAcute] ( x = ( ( k * s1 - hm1 ) * r^-1 ) mod q ):\
+\>", "Section",
+ CellChangeTimes->{{3.815668295646332*^9, 3.815668307910005*^9}, {
+  3.81566835356712*^9, 
+  3.8156685513807907`*^9}},ExpressionUUID->"14153372-e53e-4305-87a9-\
+dad2bab1c39a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"k", "=", 
+  RowBox[{"Mod", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"PowerMod", "[", 
+      RowBox[{
+       RowBox[{"s1", "-", "s2"}], ",", 
+       RowBox[{"-", "1"}], ",", "q"}], "]"}], "*", 
+     RowBox[{"(", 
+      RowBox[{"hm1", "-", "hm2"}], ")"}]}], ",", "q"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"x", "=", 
+  RowBox[{"Mod", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"k", "*", "s1"}], "-", "hm1"}], ")"}], "*", 
+     RowBox[{"PowerMod", "[", 
+      RowBox[{"r", ",", 
+       RowBox[{"-", "1"}], ",", "q"}], "]"}]}], ",", "q"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"k", "\[Equal]", "solveK"}], "\[IndentingNewLine]", 
+ RowBox[{"x", "\[Equal]", "solveX"}]}], "Input",
+ CellChangeTimes->{{3.815668562437945*^9, 3.815668584226363*^9}},
+ CellLabel->"In[80]:=",ExpressionUUID->"abc1e775-4630-4f6c-8aeb-ba651d07523f"],
+
+Cell[BoxData["290906610810690179972018179239952193088672167188"], "Output",
+ CellChangeTimes->{3.815668686240964*^9},
+ CellLabel->"Out[80]=",ExpressionUUID->"4117c05a-4d59-4567-8d5d-696df2776929"],
+
+Cell[BoxData["555336883567305608284725219102191211489862726405"], "Output",
+ CellChangeTimes->{3.815668686242682*^9},
+ CellLabel->"Out[81]=",ExpressionUUID->"5e3dd8ef-ed27-49a7-bf7b-395c4e6b17a7"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.815668686244491*^9},
+ CellLabel->"Out[82]=",ExpressionUUID->"9fe00ab2-3bc8-4001-93da-1312ab1f6e71"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.815668686245919*^9},
+ CellLabel->"Out[83]=",ExpressionUUID->"26fd137d-f857-46c3-883f-354c91ffcc09"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+T\[IAcute]m z\[IAcute]sk\[AAcute]me soukrom\[YAcute] kl\[IAcute]\[CHacek] x = \
+555336883567305608284725219102191211489862726405.\
+\>", "Section",
+ CellChangeTimes->{{3.815668712871427*^9, 
+  3.8156687297163877`*^9}},ExpressionUUID->"a918d2ea-2a03-4ebe-a11b-\
+c7ecccbef479"]
+}, Open  ]]
+},
+WindowSize->{1916, 993},
+WindowMargins->{{2, Automatic}, {31, Automatic}},
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 194, 3, 99, "Title",ExpressionUUID->"edb0c8bb-d8ce-4fdb-a4f4-b4b763936641"],
+Cell[CellGroupData[{
+Cell[799, 29, 800, 14, 146, "Section",ExpressionUUID->"bc118fe9-93c8-4e6a-a0cc-74dd32eab230"],
+Cell[1602, 45, 1539, 37, 308, "Input",ExpressionUUID->"488962df-f371-49d8-abb9-2e2481a0ea0b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3178, 87, 454, 9, 68, "Section",ExpressionUUID->"ee77044a-4560-40e8-b13a-05752a545295"],
+Cell[CellGroupData[{
+Cell[3657, 100, 316, 7, 55, "Input",ExpressionUUID->"5c44a5fd-52f6-444b-bffd-c7b784b5223b"],
+Cell[3976, 109, 197, 2, 35, "Output",ExpressionUUID->"412280bb-c0f6-4b26-a844-d7b4190b1fca"],
+Cell[4176, 113, 197, 2, 35, "Output",ExpressionUUID->"2cc670c5-e77e-4da8-b466-d9b69587b930"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4422, 121, 366, 7, 68, "Section",ExpressionUUID->"46f68c2d-662d-4b4b-9614-aa631fb3d110"],
+Cell[CellGroupData[{
+Cell[4813, 132, 1158, 34, 78, "Input",ExpressionUUID->"9b6543aa-d756-43ca-9074-be2c10b20dfd"],
+Cell[5974, 168, 395, 11, 35, "Output",ExpressionUUID->"e15a64e8-e3cc-4071-bf8d-28397885b8d1"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6418, 185, 487, 9, 107, "Section",ExpressionUUID->"14153372-e53e-4305-87a9-dad2bab1c39a"],
+Cell[CellGroupData[{
+Cell[6930, 198, 903, 26, 101, "Input",ExpressionUUID->"abc1e775-4630-4f6c-8aeb-ba651d07523f"],
+Cell[7836, 226, 196, 2, 35, "Output",ExpressionUUID->"4117c05a-4d59-4567-8d5d-696df2776929"],
+Cell[8035, 230, 196, 2, 35, "Output",ExpressionUUID->"5e3dd8ef-ed27-49a7-bf7b-395c4e6b17a7"],
+Cell[8234, 234, 152, 2, 35, "Output",ExpressionUUID->"9fe00ab2-3bc8-4001-93da-1312ab1f6e71"],
+Cell[8389, 238, 152, 2, 35, "Output",ExpressionUUID->"26fd137d-f857-46c3-883f-354c91ffcc09"]
+}, Open  ]]
+}, Open  ]],
+Cell[8568, 244, 284, 6, 68, "Section",ExpressionUUID->"a918d2ea-2a03-4ebe-a11b-c7ecccbef479"]
+}, Open  ]]
+}
+]
+*)
+

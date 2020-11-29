@@ -16,3 +16,5 @@ složka LinearniKryptoanalyza - vypracování úkolu zadaného na 6. a 7. cviče
 
 složka DiferencialniKryptoanalyza - vypracování úkolu zadaného na 7. cvičení
 
+složka DSA_NONCE - vypracování úkolu zadaného jako práce na 9. cvičení na téma DSA - dvojí použití NONCE
+

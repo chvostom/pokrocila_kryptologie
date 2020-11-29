@@ -1,0 +1,14 @@
+# AKTIVITA ZE CVIČENÍ - DSA - dvojí použití NONCE
+
+## Zadání
+
+Kryptografický modul provádějící výpočet podpisů algoritmem DSA byl napaden škodlivým programem. Ten způsobil, že byly vygenerovány dva podpisy dvou různých zpráv za použití stejné hodnoty NONCE k. Vypočtěte hodnotu soukromého klíče, máte-li dány veřejné parametry (p, q, g), veřejný klíč y, zprávy m_1, m_2 a podpisy (r_1, s_1) a (r_2, s_2).
+
+## Výsledky
+
+Výsledné řešení se nachází v souboru DSA_NONCE.nb
+
+## Ostatní přiložené soubory
+
+DSA_NONCE.pdf - stejný soubor jako DSA_NONCE.nb akorát uložený jako pdf
+

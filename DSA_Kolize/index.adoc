@@ -1,0 +1,16 @@
+# DOMÁCÍ ÚKOL - DSA - vnitřní kolize
+
+## Zadání
+
+Najděte dvě (smysluplné*) zprávy m1 a m2, pro které existují veřejné parametry DSA (p, q, g) takové, že obě zprávy mají pro libovolnou hodnotu soukromého klíče zaměnitelnou hodnotu platného podpisu (r, s). Podpis zprávy m1 je tak zároveň platným podpisem zprávy m2 a obráceně. Parametry (p, q, g) nalezněte a kolizi podpisů obou zpráv demonstrujte pro náhodně zvolenou hodnotu soukromého klíče.
+
+## Výsledky
+
+Výsledné řešení se nachází v souboru DSA_Kolize.nb
+
+## Ostatní přiložené soubory
+
+DSA_Kolize.pdf - stejný soubor jako DSA_Kolize.nb akorát uložený jako pdf
+
+FIPS186-5.pdf - Dokumentace FIPS PUB 186-5 - Digital Signature Standard (DSS)
+

@@ -18,3 +18,5 @@ složka DiferencialniKryptoanalyza - vypracování úkolu zadaného na 7. cviče
 
 složka DSA_NONCE - vypracování úkolu zadaného jako práce na 9. cvičení na téma DSA - dvojí použití NONCE
 
+složka DSA_Kolize - vypracování domácího úkolu na téma DSA - vnitřní kolize
+

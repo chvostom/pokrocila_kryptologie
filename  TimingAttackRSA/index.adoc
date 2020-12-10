@@ -1,0 +1,14 @@
+# DOMÁCÍ ÚKOL - Timing attack na RSA
+
+## Zadání
+
+Zopakujte si problematiku postranních kanálů, zvláště pak časového. Zaopakujte si výpočet modulární mocniny pomocí algorimu opakovaných čtverců (Square and Multiply) a Montgomeryho násobení. Otevřete si v Mathematice pracovní sešit a otestujte zjednodušenou verzi časovacího útoku na RSA. Všimněte si, že použitý útok na násobení se obtížně vyhodnocuje - průměrný čas nemáme s čím porovnávat. Doplňte výpočet o útok na druhou mocninu.
+
+## Výsledky
+
+Výsledné řešení se nachází v souboru TimingAttackRSA.nb
+
+## Ostatní přiložené soubory
+
+TimingAttackRSA.pdf - stejný soubor jako TimingAttackRSA.nb akorát uložený jako pdf
+
